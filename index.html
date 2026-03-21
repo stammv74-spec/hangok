@@ -4,9 +4,17 @@
 
 <h1>🔊 Hang teszt</h1>
 
-<audio autoplay>
-  <source src="zene.mp3" type="audio/mp3">
+<button onclick="playAudio()">INDÍTÁS</button>
+
+<audio id="a">
+  <source src="/hangok/zene.mp3" type="audio/mpeg">
 </audio>
+
+<script>
+function playAudio() {
+  document.getElementById("a").play();
+}
+</script>
 
 </body>
 </html>
