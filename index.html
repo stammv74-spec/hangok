@@ -2,15 +2,45 @@
 <html>
 <body style="text-align:center; background:black; color:white;">
 
-<h1>🎵 Hang</h1>
+<h1>🎵 Hang vezérlés</h1>
 
-<iframe width="300" height="200"
-src="https://indavideo.hu/video/HAPPI_BIRTHDAY"
-frameborder="0"
-allow="autoplay">
-</iframe>
+<!-- KÉP (alapból rejtve) -->
+<img id="kep" src="kep.jpg" width="300" style="display:none;">
 
-<p>Koppints a hanghoz 🔊</p>
+<br><br>
+
+<!-- GOMBOK -->
+<button onclick="playAudio()">▶️ Indítás</button>
+<button onclick="stopAudio()">⏹ Leállítás</button>
+
+<br><br>
+
+<!-- HANG -->
+<audio id="audio">
+  <source src="Voicy_Impearial March.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function playAudio() {
+  let audio = document.getElementById("audio");
+  let kep = document.getElementById("kep");
+
+  audio.volume = 0.2; // 20%
+  audio.play();
+
+  kep.style.display = "none"; // kép eltűnik
+}
+
+function stopAudio() {
+  let audio = document.getElementById("audio");
+  let kep = document.getElementById("kep");
+
+  audio.pause();
+  audio.currentTime = 0;
+
+  kep.style.display = "block"; // kép megjelenik
+}
+</script>
 
 </body>
 </html>
